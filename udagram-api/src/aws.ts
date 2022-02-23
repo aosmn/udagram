@@ -10,6 +10,8 @@ export const s3 = new AWS.S3({
   region: config.aws_region,
   params: { Bucket: config.aws_media_bucket }
 });
+console.log('aws', s3);
+
 
 // Generates an AWS signed URL for retrieving objects
 export function getGetSignedUrl(key: string): string {
