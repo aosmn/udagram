@@ -9,19 +9,24 @@ jobs:
     steps:
       - node/install
       - checkout
+      - aws-cli/setup
       - run:
-          name: Front-End Install
+          name: Install Client
           command: |
-            npm run frontend:install
+            npm run client:install
       - run:
-          name: Back-End Install
+          name: Install Server
           command: |
-            npm run backend:install
+            npm run server:install
       - run:
-          name: Front-End Build
+          name: Build Client
           command: |
-            npm run frontend:build
+            npm run client:build
       - run:
-          name: Back-End Build
+          name: Build Server
           command: |
-            npm run backend:build
+            npm run server:build
+      - run:
+          name: Deploy Client
+          command: |
+            npm run client:deploy
