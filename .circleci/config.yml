@@ -35,6 +35,7 @@ jobs:
       - run:
           name: Deploy Server
           command: |
+            eb init udagram-api --platform node.js 
             eb create --sample udagram-api-dev
             eb deploy udagram-api-dev
             eb status
