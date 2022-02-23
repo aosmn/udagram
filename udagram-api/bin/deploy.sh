@@ -4,5 +4,16 @@ eb init udagram-api --platform node.js --region us-east-1
 eb create --sample udagram-api-dev
 echo "\ndeploy:\n  artifact: www/Archive.zip" >> $configfile
 eb deploy udagram-api-dev --profile default
-eb setenv PORT=$PORT POSTGRES_DB=$POSTGRES_DB DB_PORT=$DB_PORT POSTGRES_HOST=$POSTGRES_HOST AWS_REGION=$AWS_REGION POSTGRES_PASSWORD=$POSTGRES_PASSWORD POSTGRES_USERNAME=$POSTGRES_USERNAME
+eb setenv \
+AWS_REGION=$AWS_REGION \
+DB_PORT=$DB_PORT \
+JWT_SECRET=$JWT_SECRET \
+PORT=$PORT \
+POSTGRES_DB=$POSTGRES_DB \
+POSTGRES_HOST=$POSTGRES_HOST \
+POSTGRES_PASSWORD=$POSTGRES_PASSWORD \
+POSTGRES_USERNAME=$POSTGRES_USERNAME \
+URL=$URL \
+AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+
 eb status
