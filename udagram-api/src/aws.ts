@@ -11,6 +11,7 @@ export const s3 = new AWS.S3({
   params: { Bucket: config.aws_media_bucket }
 });
 console.log('aws', s3);
+console.log('aws', credentials);
 
 
 // Generates an AWS signed URL for retrieving objects
