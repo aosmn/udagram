@@ -19,6 +19,7 @@ export function getGetSignedUrl(key: string): string {
     Key: key,
     Expires: signedUrlExpireSeconds
   });
+  console.log('s3', config.aws_media_bucket);
   console.log('s3', signedUrl);
   return signedUrl;
 }
@@ -32,6 +33,7 @@ export function getPutSignedUrl(key: string): string {
     Key: key,
     Expires: signedUrlExpireSeconds
   });
+  console.log('s3', config.aws_media_bucket);
   console.log('s3', signedUrl);
 
   return signedUrl;
