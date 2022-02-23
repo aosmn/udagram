@@ -24,6 +24,8 @@ async function comparePasswords(plainTextPassword: string, hash: string): Promis
 }
 
 function generateJWT(user: User): string {
+  console.log('secret', c.config.jwt.secret);
+  
   return jwt.sign(user.short(), c.config.jwt.secret);
 }
 
@@ -108,6 +110,8 @@ router.post('/', async (req: Request, res: Response) => {
 
 
   const jwt = generateJWT(savedUser);
+  console.log('henaa', jwt);
+  
   res.status(201).send({token: jwt, user: savedUser.short()});
 });
 
