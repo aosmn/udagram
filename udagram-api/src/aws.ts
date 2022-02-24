@@ -13,7 +13,6 @@ export const s3 = new AWS.S3({
 console.log('aws', s3);
 console.log('aws', credentials);
 
-
 // Generates an AWS signed URL for retrieving objects
 export function getGetSignedUrl(key: string): string {
   const signedUrlExpireSeconds = 60 * 5;
@@ -31,11 +30,19 @@ export function getGetSignedUrl(key: string): string {
 export function getPutSignedUrl(key: string): string {
   const signedUrlExpireSeconds = 60 * 5;
 
-  const signedUrl = s3.getSignedUrl('putObject', {
-    Bucket: config.aws_media_bucket,
-    Key: key,
-    Expires: signedUrlExpireSeconds
-  });
+  let signedUrl = '';
+  s3.getSignedUrl(
+    'putObject',
+    {
+      Bucket: config.aws_media_bucket,
+      Key: key,
+      Expires: signedUrlExpireSeconds
+    },
+    function (err, url) {
+      console.log(err);
+      signedUrl=url
+    }
+  );
   console.log('s3', config.aws_media_bucket);
   console.log('s3', signedUrl);
 
