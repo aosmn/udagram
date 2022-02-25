@@ -5,13 +5,13 @@ import { config } from './config/config';
 // const credentials = new AWS.SharedIniFileCredentials({ profile: 'default' });
 // AWS.config.credentials = credentials;
 
-AWS.config.update({
-  maxRetries: 3,
-  httpOptions: {timeout: 30000, connectTimeout: 5000},
-  region: config.aws_region,
-  accessKeyId: config.aws_key_id,
-  secretAccessKey: config.aws_secret_key,
-});
+// AWS.config.update({
+//   maxRetries: 3,
+//   httpOptions: {timeout: 30000, connectTimeout: 5000},
+//   region: config.aws_region,
+//   accessKeyId: config.aws_key_id,
+//   secretAccessKey: config.aws_secret_key,
+// });
 
 
 export const s3 = new AWS.S3({
