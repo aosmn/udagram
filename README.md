@@ -1,5 +1,7 @@
 # Udagram
 
+[Go to app](http://al-udagram.s3-website-us-east-1.amazonaws.com/)
+
 # Template:
 [![<CircleCI>](https://circleci.com/gh/aosmn/udagram.svg?style=svg)](<https://app.circleci.com/pipelines/github/aosmn/udagram>)
 
