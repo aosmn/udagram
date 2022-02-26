@@ -1,5 +1,8 @@
 # Udagram
 
+# Template:
+[![<CircleCI>](https://circleci.com/gh/aosmn/udagram.svg?style=svg)](<https://app.circleci.com/pipelines/github/aosmn/udagram>)
+
 This application is provided to you as an alternative starter project if you do not wish to host your own code done in the previous courses of this nanodegree. The udagram application is a fairly simple application that includes all the major components of a Full-Stack web application.
 
 ## Getting Started
@@ -25,6 +28,11 @@ The project can run but is missing some information to connect to the database a
 - A S3 bucket for hosting uploaded pictures.
 
 ```
+
+### Documentation
+- [Infrastructure](./docs/Infrastructure.md)
+- [Pipeline](./docs/Infrastructure.md)
+- [Applicatin Dependencies](./docs/Dependencies.md)
 
 ### Installation
 

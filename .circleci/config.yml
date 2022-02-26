@@ -8,10 +8,13 @@ jobs:
     docker:
       - image: "cimg/base:stable"
     steps:
+      # install node
       - node/install
       - checkout
+      #install aws-cli
       - aws-cli/setup:
           profile-name: $AWS_PROFILE
+      #install eb
       - aws-elastic-beanstalk/setup
       - run:
           name: Install Client
