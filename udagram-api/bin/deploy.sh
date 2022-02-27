@@ -2,7 +2,6 @@ configfile='.elasticbeanstalk/config.yml'
 
 eb init udagram-api --platform node.js --region us-east-1
 eb create --sample udagram-api-dev
-
 echo "\ndeploy:\n  artifact: www/Archive.zip" >> $configfile
 # eb use udagram-api-dev
 eb deploy udagram-api-dev
